@@ -1,4 +1,8 @@
-const _ = require('lodash');
-const sqlite3 = require('sqlite3');
+const config = require('./config');
+const createDB = require('./lib/db');
+const createScraper = require('./lib/scraper');
 
-console.log('sqlite3', Object.keys(sqlite3).length);
+const db = createDB(config);
+const scraper = createScraper({ urls: config.urls, db });
+
+scraper();
