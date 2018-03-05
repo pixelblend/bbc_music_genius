@@ -20,11 +20,11 @@ const main = async () => {
     const queryStripped = query.replace(/[^0-9a-z ]/gi, '');
 
     try {
-      const lyrics = await scrapeLyrics(query);
+      const { lyrics, url } = await scrapeLyrics(query);
 
     await db.run(
-      `update music set lyrics = $lyrics where id = $id`,
-      { $id: t.id, $lyrics: lyrics }
+      `update music set lyrics = $lyrics and genius_url = $geniusUrl where id = $id`,
+      { $id: t.id, $lyrics: lyrics, $geniusUrl: url }
     );
     } catch(err) {
       console.warn(`No lyrics found for ${query}: `, err);
