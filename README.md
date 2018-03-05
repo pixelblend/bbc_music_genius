@@ -17,7 +17,8 @@ BBC Music & Lyrics Scraper
 
     `npm run lyrics`
 
-  This is an interactive process, as [Genius](genius.com) does not always match a
-  song search sensibly.
+  This is an interactive process, as [Genius](genius.com) does not always match
+  a song search sensibly. You will need a [Genius API
+  Token](https://docs.genius.com/) to run this scraper.
 
 All data is stored in a SQLite database file at `db/music.sqlite3`
