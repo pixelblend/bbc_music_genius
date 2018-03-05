@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "migrate": "node ./bin/db-migrate.js"
+    "music": "node ./bin/music.js",
+    "migrate": "node ./bin/db-migrate.js",
+    "lyrics": "node ./bin/lyrics.js"
   },
   "author": "",
   "license": "ISC",
